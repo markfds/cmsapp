@@ -1,0 +1,28 @@
+task unpackFiles(type: Copy) {
+    from zipTree("src/resources/thirdPartyResources.zip")
+    into "${buildDir}/resources"
+}
+
+apply plugin: 'java'
+
+task zip(type: Zip) {
+    from 'src/dist'
+    into('libs') {
+        from configurations.runtime
+    }
+}
+
+apply plugin: 'java'
+
+task tar(type: Tar) {
+    from 'src/dist'
+    into('libs') {
+        from configurations.runtime
+    }
+}
+
+tasks.withType(AbstractArchiveTask) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
+

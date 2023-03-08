@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.1.0'
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-vintage'
+        // excludeEngines 'junit-jupiter'
+    }
+}

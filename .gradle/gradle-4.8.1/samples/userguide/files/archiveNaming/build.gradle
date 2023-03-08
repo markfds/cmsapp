@@ -1,0 +1,24 @@
+plugins {
+    id 'base'
+}
+
+version = 1.0
+
+task myZip(type: Zip) {
+    from 'somedir'
+
+    doLast {
+        println archiveName
+        println relativePath(destinationDir)
+        println relativePath(archivePath)
+    }
+}
+
+task myCustomZip(type: Zip) {
+    baseName = 'customName'
+    from 'somedir'
+
+    doLast {
+        println archiveName
+    }
+}

@@ -1,0 +1,7 @@
+File configFile = file("${rootDir}/shared/config.xml")
+
+task checkConfigFile {
+    doLast {
+        assert configFile.exists()
+    }
+}

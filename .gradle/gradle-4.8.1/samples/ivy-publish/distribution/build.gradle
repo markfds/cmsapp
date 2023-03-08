@@ -1,0 +1,36 @@
+apply plugin: 'distribution'
+
+group = 'org.gradle.sample'
+version = '1.0'
+
+distributions {
+    main {
+        contents {
+            from { 'src' }
+        }
+    }
+    custom {
+        contents {
+            from { 'src' }
+        }
+    }
+}
+
+apply plugin: 'ivy-publish'
+
+publishing {
+    publications {
+        myDistribution(IvyPublication) {
+            artifact distZip
+            artifact customDistTar
+        }
+    }
+}
+
+publishing {
+    repositories {
+        ivy {
+            url "$buildDir/repo"
+        }
+    }
+}

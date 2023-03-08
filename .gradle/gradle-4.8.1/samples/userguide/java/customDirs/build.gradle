@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+version = '1.2.1'
+
+sourceSets {
+    main {
+         java {
+            srcDirs = ['src']
+         }
+    }
+
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'thirdParty/src/main/java'
+        }
+    }
+}
+
+
+sourceSets {
+    intTest
+}
+
+reporting.baseDir = "my-reports"
+testResultsDirName = "$buildDir/my-test-results"
+
+task showDirs {
+    doLast {
+        logger.quiet(rootDir.toPath().relativize(project.reportsDir.toPath()).toString())
+        logger.quiet(rootDir.toPath().relativize(project.testResultsDir.toPath()).toString())
+    }
+}

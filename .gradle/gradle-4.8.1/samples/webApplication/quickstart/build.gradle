@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'gradle.plugin.org.gretty:gretty:2.1.0'
+    }
+}
+apply plugin: 'org.gretty'
+
+apply plugin: 'war'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'commons-io', name: 'commons-io', version: '1.4'
+    compile group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
+}
+
+gretty {
+    httpPort = 8080
+}

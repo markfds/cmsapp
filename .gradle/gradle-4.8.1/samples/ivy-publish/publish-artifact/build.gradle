@@ -1,0 +1,33 @@
+apply plugin: "base"
+apply plugin: "ivy-publish"
+
+group = "org.gradle.sample"
+version = "1.0"
+
+def rpmFile = file("$buildDir/rpms/my-package.rpm")
+def rpmArtifact = artifacts.add("archives", rpmFile) {
+    type "rpm"
+    builtBy "rpm"
+}
+
+task rpm() {
+    outputs.file rpmFile
+    doLast {
+        // produce real RPM here
+        rpmFile << "file contents"
+    }
+}
+
+publishing {
+    publications {
+        ivy(IvyPublication) {
+            artifact rpmArtifact
+        }
+    }
+    repositories {
+        // change URLs to point to your repo, e.g. http://my.org/repo
+        ivy {
+            url "$buildDir/repo"
+        }
+    }
+}

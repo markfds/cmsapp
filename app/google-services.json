@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1085540141176",
+    "project_id": "food-hut-777",
+    "storage_bucket": "food-hut-777.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085540141176:android:4266d93acfe994599e858d",
+        "android_client_info": {
+          "package_name": "com.example.hp.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085540141176-s2fc2lc84vj2ot39gn8ar36coronnkfl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.myapplication",
+            "certificate_hash": "ec64d8b8dd7eb3cdf11989dfa22ff6304605f674"
+          }
+        },
+        {
+          "client_id": "1085540141176-kgreuk99gfmlopblucin3cj1t292s0cc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3SVwK5IAN4UxHD3_kGo9st9hcXDqOdYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085540141176-kgreuk99gfmlopblucin3cj1t292s0cc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

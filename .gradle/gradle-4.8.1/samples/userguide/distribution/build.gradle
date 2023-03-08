@@ -1,0 +1,24 @@
+apply plugin: 'distribution'
+
+distributions {
+    main {
+        baseName = 'someName'
+        contents {
+            from { 'src/readme' }
+        }
+    }
+}
+
+apply plugin:'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://some/repo")
+        }
+    }
+}
+
+distributions {
+    custom {}
+}

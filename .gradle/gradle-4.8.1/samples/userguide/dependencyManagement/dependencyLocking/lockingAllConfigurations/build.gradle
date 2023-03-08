@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+dependencyLocking {
+    lockAllConfigurations()
+}
+
+task resolveAndLockAll {
+    doFirst {
+        assert gradle.startParameter.writeDependencyLocks
+    }
+    doLast {
+        configurations.each {
+            if (it.canBeResolved) {
+                // Any any custome filtering on the to be resolved configurations
+                it.resolve()
+            }
+        }
+    }
+}

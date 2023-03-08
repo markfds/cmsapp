@@ -1,0 +1,76 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+version = '1.2.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.hibernate:hibernate-core:3.6.7.Final'
+}
+
+sourceSets {
+    intTest {
+        java.srcDir file('src/intTest/java')
+        resources.srcDir file('src/intTest/resources')
+        compileClasspath += sourceSets.main.output + configurations.testRuntime
+        runtimeClasspath += output + compileClasspath
+    }
+}
+
+configurations {
+    intTestImplementation.extendsFrom implementation
+}
+
+dependencies {
+    intTestImplementation 'junit:junit:4.12'
+}
+
+configurations {
+    asciidoclet
+}
+
+dependencies {
+    asciidoclet 'org.asciidoctor:asciidoclet:1.+'
+}
+
+javadoc {
+    options.docletpath = configurations.asciidoclet.files.toList()
+    options.doclet = 'org.asciidoctor.Asciidoclet'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileJava {
+    options.incremental = true
+    options.fork = true
+    options.failOnError = false
+}
+
+task integrationTest(type: Test) {
+    description = 'Runs integration tests.'
+    group = 'verification'
+
+    testClassesDirs = sourceSets.intTest.output.classesDirs
+    classpath = sourceSets.intTest.runtimeClasspath
+    mustRunAfter test
+}
+
+check.dependsOn integrationTest
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allJava
+}
+
+
+task testJavadoc(type: Javadoc) {
+    source = sourceSets.test.allJava
+}
