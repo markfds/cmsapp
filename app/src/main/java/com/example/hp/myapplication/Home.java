@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.example.hp.myapplication.Common.Common;
 import com.example.hp.myapplication.Interface.ItemClickListener;
 import com.example.hp.myapplication.Model.Category;
+import com.example.hp.myapplication.Model.Order;
 import com.example.hp.myapplication.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -140,15 +141,18 @@ public class Home extends AppCompatActivity
 
         if (id == R.id.nav_menu) {
             // Handle the camera action
+            Intent intent = new Intent(Home.this,Menu.class);
+            startActivity(intent);
         } else if (id == R.id.nav_cart) {
+            Intent intent2 = new Intent(Home.this,Cart.class);
+            startActivity(intent2);
 
         } else if (id == R.id.nav_orders) {
+            Intent intent3 = new Intent(Home.this, Order.class);
+            startActivity(intent3);
 
         } else if (id == R.id.nav_log_out) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 

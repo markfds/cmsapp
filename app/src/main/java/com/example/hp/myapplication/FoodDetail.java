@@ -45,7 +45,7 @@ public class FoodDetail extends AppCompatActivity {
         foods = database.getReference("Foods");
 
         //init view
-        numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
+        numberButton = (ElegantNumberButton)findViewById(R.id.number_button1);
         btncart = (FloatingActionButton)findViewById(R.id.btncart);
 
         btncart.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +59,9 @@ public class FoodDetail extends AppCompatActivity {
             }
         });
 
-        food_description = (TextView)findViewById(R.id.food_description);
-        food_name = (TextView)findViewById(R.id.food_name);
-        food_price = (TextView)findViewById(R.id.food_price);
+        food_description = (TextView)findViewById(R.id.food_description1);
+        food_name = (TextView)findViewById(R.id.food_name1);
+        food_price = (TextView)findViewById(R.id.food_price1);
 
         food_image = (ImageView)findViewById(R.id.img_food);
 

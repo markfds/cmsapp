@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Cart"
-    android:background="@drawable/appmain"
+    android:background="@drawable/signup"
 
     android:padding="16dp">
 

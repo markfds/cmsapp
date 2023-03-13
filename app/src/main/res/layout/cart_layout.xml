@@ -27,7 +27,7 @@
                 android:gravity="center_vertical|start"
                 android:layout_marginLeft="10dp"
                 android:textAllCaps="true"
-                android:text="Food 01"
+                android:text="Ros Omlet"
                 android:textStyle="bold"
                 />
             <TextView
@@ -37,7 +37,7 @@
                 android:gravity="center_vertical|start"
                 android:layout_marginLeft="10dp"
                 android:textAllCaps="true"
-                android:text="1,00,000"
+                android:text="40"
                 android:textStyle="italic"
                 />
 
@@ -45,11 +45,12 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical|end"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="36dp"
             android:id="@+id/cart_item_count"
+            android:src="@drawable/rosomlette"
             />
 
     </LinearLayout>
